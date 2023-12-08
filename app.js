@@ -4,12 +4,14 @@ let totalIncrement = 1;
 
 //DOM
 const numberOfCookiesElement = document.getElementById('numberOfCookies');
+const cookiesPerSecondElement = document.getElementById('cookiesPerSecond');
 
 // setInterval
 setInterval(function () {
     cookies += totalIncrement;
     numberOfCookiesElement.textContent = cookies;
     localStorage.setItem('cookieCount', cookies);
+    cookiesPerSecondElement.textContent = totalIncrement + ' cps';
     console.log("🍪", cookies);
 }, 1000);
 
@@ -19,7 +21,7 @@ const upgrades = [
     { name: 'Oven', cost: 100, increment: 10 },
     { name: 'Factory', cost: 1000, increment: 100 },
     { name: 'Mine', cost: 10000, increment: 1000 },
-    { name: 'Bank', cost: 10000, increment: 1000 }
+    { name: 'Bank', cost: 100000, increment: 10000 }
 ];
 
 // Events for upgrades
@@ -30,6 +32,7 @@ for (let i = 0; i < upgrades.length; i++) {
             cookies -= upgrades[i].cost;
             numberOfCookiesElement.textContent = cookies;
             totalIncrement += upgrades[i].increment;
+            cookiesPerSecondElement.textContent = totalIncrement + ' cps';
         } else {
             alert("Not enough cookies to buy this upgrade!");
         }
