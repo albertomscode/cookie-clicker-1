@@ -56,5 +56,5 @@ theButton.addEventListener('click', function () {
 
 // Greeting alert
 window.addEventListener('load', function () {
-    alert("Hi there! Get as many 🍪 as you can and make your grandma proud.");
+    alert("Hi there! Cook as many 🍪 as you can and make your grandma proud.");
 });
