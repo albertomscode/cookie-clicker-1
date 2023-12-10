@@ -53,3 +53,8 @@ theButton.addEventListener('click', function () {
     numberOfCookiesElement.textContent = cookies;
     localStorage.setItem('cookieCount', cookies);
 });
+
+// Greeting alert
+window.addEventListener('load', function () {
+    alert("Hi there! Get as many 🍪 as you can and make your grandma proud.");
+});

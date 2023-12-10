@@ -17,7 +17,7 @@ body {
 #numberOfCookies {
     font-size: 64px;
     font-weight: bold;
-    color: #4CAF50;
+    color: #ad8b43;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
 }
@@ -25,16 +25,22 @@ body {
 #cookiesPerSecond {
     font-size: 24px;
     color: #fff;
-    background-color: #af4c4c;
-    padding: 10px;
+    background-color: #b64d1cd3;
+    padding: 4px;
     border-radius: 8px;
+    margin-top: 5px;
     margin-bottom: 10px;
-    border-color: #8a2828;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+#cookiesPerSecond:hover {
+    background-color: #b64d1c;
+    transform: scale(1.05);
 }
 
 
 #cookiesPerSecond::before {
-    content: '🍪 ';
+    content: '🍪';
     font-size: 28px;
     margin-right: 5px;
 }
@@ -45,9 +51,9 @@ body {
 }
 
 #theButton {
-    font-size: 15px;
+    font-size: 130px;
     padding: 15px 30px;
-    background-color: #bc6e4c;
+    background-color: transparent;
     color: white;
     border: none;
     border-radius: 10px;
@@ -58,9 +64,31 @@ body {
 }
 
 #theButton:hover {
-    background-color: #a06045;
-    transform: scale(1.05);
+    background-color: transparent;
+    transform: scale(1.3) rotate(360deg);
 }
+
+#theButton:hover::before {
+    content: 'Click me!';
+    background-color: #af4c4c;
+    display: block;
+    position: absolute;
+    left: 50%; 
+    transform: translateX(-50%);
+    font-size: 15px;
+    color: #ffffff;
+    opacity: 0;
+    animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        top: 90%;
+        color: #f0f0f0;
+    }
+}
+
 
 #shop {
     display: flex;
@@ -84,7 +112,7 @@ body {
 .shop-item button {
     margin-top: 20px;
     padding: 10px 20px;
-    background-color: #4CAF50;
+    background-color: #af4c4c;
     color: white;
     border: none;
     border-radius: 8px;
@@ -93,13 +121,13 @@ body {
 }
 
 .shop-item button:hover {
-    background-color: #45a049;
+    background-color: #d32f2f;
 }
 
 #resetButton {
     font-size: 20px;
     padding: 15px 30px;
-    background-color: #af4c4c;
+    background-color: #b64d1cd3;
     color: white;
     border: none;
     border-radius: 10px;
